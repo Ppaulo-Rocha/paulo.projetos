@@ -4,6 +4,8 @@
   <title>FAQ MOV</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,28 +19,40 @@
     <source src="img/MOV em Santarém_ Entre neste movimento e comece a viver. (1080p).mp4" type="video/mp4">        
   </video>
   
-  <div class="search-box">
-    <input type="text" class="search-txt" placeholder="Pesquisar">
-    <a href="#" class="search-btn">
-      <img src="img/magnifier-1_icon-icons.com_56924.svg" alt="Ícone de pesquisa" height="20" width="20">
-    </a>     
-  </div>
-
+  
   <div id="sidebar">
     <div id="menu">
-      <a href="#">Faturamento</a>
-      <a href="#">Financeiro</a>
-      <a href="#">Cobranças</a>
-      <a href="#">Suporte</a>
-      <a href="#">Comercial</a>
-      <a href="#">Inicio</a>
+			<a class="btn-no-focus btn-animated"  href="financeiro.html" role="button">Troca de titularidade</a>
+			<a class="btn-no-focus btn-animated"  href="financeiro.html" role="button">Faturamento</a>
+			<a class="btn-no-focus btn-animated" href="financeiro.html" role="button">Cobranças</a>
+      <a class="btn-no-focus btn-animated" href="financeiro.html" role="button">Suporte</a>
+      <a class="btn-no-focus btn-animated" href="financeiro.html" role="button">Comercial</a>     
+      <a class="btn-no-focus btn-animated" href="financeiro.html" role="button">Inicio</a>
     </div>
   </div>
 
   <div id="content">
     <h1>FAQ MOV SUPORTE</h1>
   </div>
-  
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var searchButton = document.getElementById("search-button");
+      var searchInput = document.getElementById("search-input");
+
+      searchButton.addEventListener("click", function () {
+        var searchTerm = searchInput.value;
+
+        if (searchTerm) {
+          // Aqui você pode realizar a ação desejada com o valor de pesquisa
+          alert("Você pesquisou por: " + searchTerm);
+        } else {
+          alert("Digite algo para pesquisar.");
+        }
+      });
+    });
+  </script>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       var video = document.getElementById("video-background");
@@ -49,7 +63,7 @@
       }
   
       // Chame a função com a velocidade desejada
-      setVideoSpeed(0.4); // Altere o valor para ajustar a velocidade
+      setVideoSpeed(0.5); // Altere o valor para ajustar a velocidade
   
       // Evento para detectar quando o vídeo termina e reiniciá-lo
       video.addEventListener("ended", function() {

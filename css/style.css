@@ -81,23 +81,23 @@ body {
 }
 .search-box:hover > .search-btn {
   background: transparent#0177c1;
-  transition: .7s;
+  transition: 1s;
 
 }
 
 #sidebar {  
-  border: solid 2px;
+  border-right:  1px white;
   border-radius: 1%;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 150px;
+  width: 250px;
   height: 100%; /* Definir a altura como 100% para cobrir toda a altura da página */
   background-color: transparent;
   backdrop-filter: blur(80px);
-  -webkit-backdrop-filter: blur(80px);
-  color: rgb(255, 251, 255); 
+  -webkit-backdrop-filter: blur(80px);  
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center; /* Itens centralizados verticalmente */
@@ -122,7 +122,7 @@ body {
 
 #menu a {
   display: flex;
-  color: rgb(214, 211, 211);
+  color: white;
   text-decoration: none;
   padding: 14px;
   background-color: transparent;
@@ -135,9 +135,71 @@ body {
   
 }
 
-#menu a:hover {
-  background-color: rgba(28, 1, 184, 0.678);
-  border-radius: 1%;
-  border: rgb(219, 219, 219) solid 1px;
-  transform: translateY(-5px) translateX(5px);
+.btn-no-focus:focus {
+  outline: 5px !important;
+  box-shadow: 5px !important;
 }
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+  border: 2px;
+  transition: 1s;
+}
+
+.btn-animated::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: orangered;
+  transition: 1s;
+}
+
+.btn-animated:hover::after {
+  width: 80%;
+}
+
+#menu a:hover {
+  background-color: transparent(28, 1, 184, 0.37);
+    transform: translateY(-5px) translateX(2px);
+}
+
+
+
+/* Media query para telas menores */
+@media screen and (max-width: 768px) {
+  #sidebar {
+    width: 100%; /* Ocupa toda a largura da tela */
+    height: auto; /* Altura se ajusta ao conteúdo */
+    position: static; /* Remover position fixed */
+    top: auto; /* Remover top */
+    left: auto; /* Remover left */
+    bottom: auto; /* Remover bottom */
+    justify-content: flex-start; /* Alinhar itens no início */
+    align-items: flex-start; /* Alinhar itens no início */
+  }
+
+  #content {
+    position: static; /* Remover position absolute */
+    top: auto; /* Remover top */
+    left: auto; /* Remover left */
+    transform: none; /* Remover transform */
+  }
+
+  #menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centralizar itens na vertical */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo do menu */
+    width: 100%; /* Ocupa toda a largura da tela */
+  }
+
+  #menu a {
+    width: 100%; /* Ocupa toda a largura do menu */
+    text-align: center; /* Centralizar texto */
+  }
+}
+
+

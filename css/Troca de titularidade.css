@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Comic+Neue&family=Open+Sans:wght@300&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+#return-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: transparent;
+  color: white;
+  padding: 10px 10px;
+  text-decoration: none;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.titulo {
+  font-weight: bolder;
+  font-size: 25px;
+  font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  align-items: center;
+  display: block;
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  height: 70px;
+  z-index: 2;
+  transition: background-color 0.9s;
+}
+
+#header ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+#header ul li {
+  font-weight: bolder;
+  font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  justify-content: center;
+  display: flex;
+  margin: 0 10px;
+}
+/* Efeito de destaque ao passar o mouse sobre os links do menu */
+#header ul li a {    
+  text-decoration: none;
+  color: white;
+  transition: color 0.9s, font-weight 0.9s, background-color 0.9s, transform 0.9s;
+}
+
+#header ul li a:hover {
+  color: transparent 
+  font-weight bold; 
+  background-color: transparent ;
+  transform: translateY(8px);
+}
+
+/* Efeito de destaque no botão "Retornar à página inicial" */
+#return-button:hover {
+  transition: color 0.9s, font-weight 0.9s, background-color 0.9s, transform 0.9s;
+  color: #ff9900; /* Cor de destaque */
+  transform: translateY(-9px); /* Efeito de levantar ligeiramente o botão */
+}
+
+/* Efeito de destaque nos subitens */
+.subitem:hover { 
+  transition: color 0.9s, font-weight 0.9s, background-color 0.9s, transform 0.9s; 
+  background-color: rgba(255, 255, 255, 0.1); /* Altera a cor de fundo dos subitens quando hover */
+  transform: translateY(-10px); /* Efeito de levantar ligeiramente os subitens */
+}
+
+/* Efeito de borda animada no botão */
+
+  /* Adicione uma animação à borda inferior do link */
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.9s, font-weight 0.9s, background-color 0.9s, transform 0.9s;
+}
+
+.btn-animated::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: orangered;
+  transition: width 0.9s ease; /* Transição mais lenta da largura da borda */
+}
+
+.btn-animated:hover::after {
+  width: 100%; /* Aumenta gradualmente a largura da borda */ 
+  overflow: hidden;
+  border: 2px;
+  transition: 1s;
+}
+
+.btn-animated::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: orangered;
+  transition: 1s;
+}
+
+.btn-animated:hover::after {
+  width: 100%;
+}
+
+/* Efeito de destaque nos links do menu na barra lateral */
+#menu a:hover {
+  background-color: rgba(28, 1, 184, 0.37);
+  transform: translateY(-5px) translateX(2px);
+}
+
+
+#header ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+#subitems {
+  z-index: 1;
+  margin-top: 60px;
+  padding: 20px;
+}
+
+.subitem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: background-color 0.9s;
+}
+
+.subitem:hover {
+  background-color: transparent;
+}
+
+.titulo2 {
+  display: flex;
+  align-items: center;
+}
+
+.subitem-text {
+  border: transparent;
+  border-radius: 1%;
+  margin-left: 1%;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  background-color: transparent 20%;
+  color: aliceblue;
+  padding: 10px;
+}
+
+#content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.column {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+  padding: 10px;
+}
+
+.subitem-image {
+  padding: 10px;
+  text-align: center;
+}
+
+.subitem-image img {
+  max-width: 100%;
+  max-height: 100px;
+}
+
+#troca-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: blur(3px);
+}
+
+.content-section {
+  display: flex;
+  align-items: center;
+}
+
+.text-column {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.image-column {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.image-column img {
+  max-width: 100%;
+  max-height: 100%;
+}
+#subitem2 .subitem-text h2 {
+  text-align: center; /* Centraliza horizontalmente */
+  margin-top: 20px; /* Adicione margem superior para espaçamento */
+}
+#subitem1 .subitem-text h2 {
+  text-align: center; /* Centraliza horizontalmente */
+  margin-top: 20px; /* Adicione margem superior para espaçamento */
+}
